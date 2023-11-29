@@ -1,15 +1,24 @@
-﻿var viccek;
+﻿window.onload = function () {
+    letöltés();
+};
+
+var viccek;
+
 function letöltés(l) {
     fetch('/jokes.json')
         .then(response => response.json())
-        .then(data => letöltésBefejeződött(data))
+        .then(data => letöltésBefejeződött(k))
 
 
-    function letöltésBefejeződött(d) {
+    function letöltésBefejeződött(k) {
         console.log("Sikeres letöltés")
-        console.log(d)
-        viccek = d;
+        console.log(k)
+        viccek = k;
 
     }
 
 };
+
+//A letöltésBefejeződött(d) függvényben for ciklussal járd be a viccek tömböt, és hozz létre egy-egy DOM elemet minden vicchez!
+
+
